@@ -7,14 +7,15 @@
 
   while (true){
     if(x%2 == 0){
-      result = '0' + result;
+      result += '0';
     }else {
-      result = '1' + result;
+      result += '1';
     }
 
     x =Math.floor(x / 2)
+    console.log(x)
     if (x == 1 || x == 0){
-      result = String(x) + result;
+      result += String(x);
       break
     }
 
@@ -22,4 +23,14 @@
     // Math.floor() -> 버림
     // Math.round() -> 반올림
   }
-  console.log(result)
+
+ x = 11;
+  function f(x){
+    if(x == 1 || x ==0) {
+      return String(x);
+    }
+    // 어떤 순서로 배치하는지가 중요하다.
+    return f(Math.floor(x/2)) + String(x%2);
+  }
+  console.log(result.split("").reverse().join(''));
+  console.log(`재귀함수 ${f(x)}`)
