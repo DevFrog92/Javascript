@@ -25,16 +25,16 @@
 
 // 콜백 함수로 비동기 처리 방식의 문제점 해결하기
 
-function getData(callbackFunc){
-  let searchData;
-  fetch(`https://jjalbot.com/api/jjals?text=피자`)
-  .then(response => callbackFunc(response.json()));
-}
+// function getData(callbackFunc){
+//   let searchData;
+//   fetch(`https://jjalbot.com/api/jjals?text=피자`)
+//   .then(response => callbackFunc(response.json()));
+// }
 
 // getData 로직이 끝나면 callbackFunc이 실행된다.
-getData(function(searchData){
-  console.log(searchData);
-});
+// getData(function(searchData){
+//   console.log(searchData);
+// });
 
 // 하지만 콜백 함수의 사용은 Callback Hell을 마주할 수 있다.
 // 콜백 안에 콜백 ....콜백....콜백...
@@ -42,3 +42,48 @@ getData(function(searchData){
 // 이러한 콜백 지옥을 해결하는 방법에는 Promise와 Async를 사용한 방법이 있다. 
 
 
+// Promise가 무엇인가?
+// Promise는 자바스크립트 미동기 처리에 사용되는 객체이다.
+
+// Promise code - basic
+
+function getData(callbackFunc){
+  return new Promise(function(resolve,reject){
+    fetch(`https://jjalbot.com/api/jjals?text=피자`)
+    .then(response => resolve(response));
+  })
+  
+}
+
+getData().then(function(searchData) {
+  console.log(searchData);
+})
+
+// 프로미스의 3가지 상태(states)
+// 1. pending(대기) : 비동기 처리 로직이 아직 완료되지 않은 상태
+// new Promise()메서드를 호출할 때 콜백 함수를 선언할 수 있고, 콜백 함수의 인자는 resolve, reject이다.
+new Promise(function(resolve,reject){});
+
+// 2. Fullfilled(이행) : 비동기 처리가 완료되어 프로미스가 결과 값을 반환해준 상태
+new Promise(function(resolve,reject){
+  // 콜백함수의 인자를 아래와 같이 실행하면 이행상태가 된다.
+  resolve();
+});
+
+// 이행 처리가 되면 .then()을 이용하여 처리 결과 값을 받을 수 있다.
+
+getData().then(function(searchData) {
+  console.log(searchData);
+})
+
+// 3. Rejected(실패) : 비동기 처리가 실패하거나 오류가 발생한 상태
+
+new Promise(function(resolve,reject){
+  // 콜백함수의 인자를 아래와 같이 실행하면 실패상태가 된다.
+  reject();
+});
+
+getData().then().catch(function(error){
+  // catch를 통해서 reject된 이유를 알 수 있다.
+  console.log(error);
+})
