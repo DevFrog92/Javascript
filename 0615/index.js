@@ -87,3 +87,22 @@ getData().then().catch(function(error){
   // catch를 통해서 reject된 이유를 알 수 있다.
   console.log(error);
 })
+
+// 기본 콜백 함수와 프로미스의 단점을 보안하기 위한 문법이다.
+//
+
+async function getData(){
+  const searchData = await fetchData();
+  console.log(searchData);
+}
+
+//  async await 기본 문법
+
+async function functionName(){
+  await nameOfAsyncronousMethod();
+} 
+// 비동기 처리 메서드가 꼭 프로미스 객체를 반환해야 await가 의도한 대로 동작한다.
+
+
+// async await 예외 처리
+// try {} catch {}
