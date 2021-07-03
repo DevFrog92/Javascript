@@ -1,5 +1,8 @@
 function solution(arr){
   let answer = [];
+  // 배열 초기값으로 생성하는 법
+  // let n = arr.length;
+  // let answer = Array.from({length:n},()=>1);
   for(let i =0;i<arr.length;i++){
     let score = 1;
     for(let j = 0;j<arr.length;j++){
