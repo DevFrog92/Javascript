@@ -1,0 +1,1 @@
+console.log('ItisTimeToStudy'.toUpperCase())
