@@ -1,7 +1,5 @@
+// from 에 상대경로가 아니라면 node_module에서 모듈을 찾게 된다.
 import getType from './getType'
-
-// 
-console.log("Hello javascript!!");
 
 // typeof data type을 리턴해 준다.
 console.log(typeof true)
