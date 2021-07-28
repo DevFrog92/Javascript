@@ -14,3 +14,12 @@ console.log(getType(false))
 console.log(getType(null))
 console.log(getType({}))
 console.log(getType([]))
+
+
+// switch(조건변수){
+// 	case 비교값:
+// 		break
+	
+// 		default:
+
+// }
