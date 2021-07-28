@@ -23,3 +23,12 @@ console.log(getType([]))
 // 		default:
 
 // }
+
+
+function scope(){
+	if(true){
+		var a = 3
+	}
+	console.log(a)
+}
+scope()

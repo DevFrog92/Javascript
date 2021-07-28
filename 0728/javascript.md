@@ -11,3 +11,8 @@
 ## Conding Convention
 - 한 줄에 하나의 명령만 작성한다.
 - ₩;₩은 명령이 끝난것을 의미한다. 보통 ;을 작성하지 않지만, 특정한 조건에서는 붙여서 사용한다.
+
+## 변수 유효범위
+- const : block scope 
+- let : block scope
+- var : function scope
