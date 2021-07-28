@@ -32,3 +32,8 @@ function scope(){
 	console.log(a)
 }
 scope()
+
+// data type conversion
+
+// falsy
+// false, '', null, undefined, 0, -0, NaN(Not a Number)
