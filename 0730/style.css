@@ -1,0 +1,41 @@
+body {
+  background: #304365;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#balloon {
+  --size: 1;
+  width: 30vh;
+  height: 30vh;
+  position: relative;
+  border-radius: 100%;
+  background: #ffee69;
+  transform: scale(var(--size, 1));
+  transform-origin: bottom center;
+  transition: transform 0.5s cubic-bezier(0.79, 1.66, 0.88, 0.38);
+}
+
+#balloon::before {
+  content: "";
+  width: 10%;
+  height: 10%;
+  background: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  border-radius: 100%;
+}
+
+.stem {
+  width: 5vh;
+  height: 5vh;
+  background: #b8a525;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 76%, 0 77%);
+  margin-top: -1px;
+  margin-bottom: 3vh;
+}
