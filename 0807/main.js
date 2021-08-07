@@ -146,7 +146,7 @@ User.prototype.arrow = () => {
 //  return `hello ${this.firstName} ${this.lastName}`
 // }
 
-class User {
+class Lol {
   constructor(first,last){
     this.firstName = first
     this.lastName = last
@@ -157,3 +157,9 @@ class User {
   }
 }
 
+class Jed extends Lol {
+  constructor(first,last,attack){
+    super(first,last)
+    this.attack = attack
+  }
+}
