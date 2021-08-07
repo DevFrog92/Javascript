@@ -163,3 +163,10 @@ class Jed extends Lol {
     this.attack = attack
   }
 }
+
+
+// 정규 표현식 ; /(.+?=@)/
+// rest parameter : function(a,b,...c) ...c
+
+
+// Immutability
