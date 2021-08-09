@@ -1,0 +1,36 @@
+.carousel_wrapper {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+}
+.carousel_container {
+  border-radius: inherit;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.carousel_slide {
+  display: flex;
+  height: 100%;
+}
+.guide_item_content {
+  align-items: center;
+  display: flex;
+  height: 400px;
+  justify-content: center;
+  width: 784px;
+}
+.carousel_btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.prev_btn {
+  left: 3%;
+}
+.next_btn {
+  right: 3%;
+}
