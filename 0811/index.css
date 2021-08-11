@@ -6,25 +6,47 @@ body {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
 }
 
-.container {
-  width: 100%;
-  height: 100vh;
-  background-color: #888;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.slide_wrapper {
+  position: relative;
+  width: 660px;
+  margin: 0 auto;
+  height: 200px;
+  overflow: hidden;
 }
 
-.box {
-  width: 350px;
-  height: 610px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 2px 10px 12px rgba(0,0,0,0.5);
+.slides {
+  position: absolute;
+  left: 0;
+  top:0;
+}
+
+.slides.animated {
+  transition: 0.5s ease-out;
+}
+
+.slides li {
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  float: left;
+}
+
+.slides li:not(:last-child){
+  margin-right: 30px;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.controls span {
+
 }
