@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:'Times New Roman', Times, serif;
+  cursor: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  min-height: 10vh;
+  align-items: center;
+  margin: auto;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.nav-links, h1 {
+  flex: 1;
+}
+
+.nav-links li {
+  padding: 1rem;
+}
+
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  /* cursor의 layout이 다르기 때문에 pointer-events:none을 하지 않으면 다른 요소에 간섭할 수 없다. */
+  pointer-events: none;
+  transition:all .5s ease;
+  transition-property: background, transform;
+  transform-origin: 100% 100%;
+  z-index: -1;
+  backdrop-filter: blur(-3px);
+}
+
+.link-grow {
+  transform: scale(2);
+  background-color: #000;
+}
+
+.hover-link {
+  color: #fff;
+}
+
+.front-cover img {
+  position: relative;
+  z-index: -3;
+  filter: blur(3px);
+}
