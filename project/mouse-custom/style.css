@@ -45,7 +45,7 @@ nav {
   transition-property: background, transform;
   transform-origin: 100% 100%;
   z-index: -1;
-  backdrop-filter: blur(-3px);
+  backdrop-filter: grayscale();
 }
 
 .link-grow {
