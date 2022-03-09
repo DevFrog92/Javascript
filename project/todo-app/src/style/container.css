@@ -1,0 +1,18 @@
+.container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+}
+.container-clock {
+  margin-bottom: 1.5rem;
+  border: 1px solid;
+}
+.container-name {
+  border: 1px solid;
+}
+.container-todo-list {
+  border: 1px solid;
+}
