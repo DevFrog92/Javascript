@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .drop-zone {
+      width: 200px;
+      height: 200px;
+      border: 4px dashed blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+    }
+
+    .drop-zone--active {
+      opacity: 0.7;
+    }
+
+    .drop-zone:first-of-type {
+      margin-right: 2rem;
+      border-color: red;
+    }
+
+    .item {
+      width: 50%;
+      height: 50%;
+      background-color: #000;
+      cursor: move; /* fallback if grab cursor is unsupported */
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+    }
+
+    .item.grabbing {
+      cursor: grabbing;
+      cursor: -moz-grabbing;
+      cursor: -webkit-grabbing;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="drop-zone">
+      <div class="item" id="item" draggable="true"></div>
+    </div>
+    <div class="drop-zone"></div>
+  </div>
+
+  <script>
+    const draggableItem = document.querySelector(".item")
+
+    draggableItem.addEventListener("dragstart", e => {
+      e.dataTransfer.setData('key', draggableItem.id)
+      draggableItem.classList.add("grabbing")
+    })
+
+    for(const dropZone of document.querySelectorAll(".drop-zone")) {
+      dropZone.addEventListener("dragover", e => {
+        e.preventDefault()
+        dropZone.classList.add("drop-zone--active")
+      })
+
+      dropZone.addEventListener("dragleave", () => {
+        dropZone.classList.remove("drop-zone--active")
+      })
+
+      dropZone.addEventListener("drop", e => {
+        e.preventDefault()
+
+        const itemId = e.dataTransfer.getData("key")
+        const droppedItem = document.getElementById(itemId)
+
+        dropZone.appendChild(droppedItem)
+        dropZone.classList.remove("drop-zone--active")
+
+      })
+    }
+  </script>
+</body>
+</html>
