@@ -5,7 +5,7 @@ export default class Kanban {
     this.root = root
 
     Kanban.columns().forEach(column => {
-      // TODO: create ann instance Column class
+      // 할일 목록에 대한 컬럼을 생성해서 루트에 append
       const columnView = new Column(column.id, column.title)
 
       this.root.appendChild(columnView.elements.root)
