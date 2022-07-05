@@ -34,6 +34,8 @@ window.oncontextmenu = function(e) {
   return false
 }
 
+window.addEventListener("resize", setPositionByIndex)
+
 function touchStart(index) {
   return function(event) {
     currentIndex = index
